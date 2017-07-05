@@ -64,7 +64,7 @@ public class GeneralActivity extends AppCompatActivity {
         generalVpLayout.setOnViewPagerChangeListener(new GeneralVpLayout.OnViewPagerChangeListener() {
             @Override
             public void onPageSelected(int position) {
-
+                Toast.makeText(GeneralActivity.this, "" + position, Toast.LENGTH_SHORT).show();
             }
         });
     }
