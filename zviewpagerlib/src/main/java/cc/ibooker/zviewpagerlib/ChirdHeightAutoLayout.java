@@ -150,8 +150,7 @@ public class ChirdHeightAutoLayout<T> extends FrameLayout {
      */
     public void start() {
         if (mImageViews == null || selectedRes == 0 || defalutRes == 0) {
-            Toast.makeText(mContext, "请设置指示器资源图片", Toast.LENGTH_SHORT).show();
-            return;
+            setPointViewVisible(false);
         }
         isContinue = true;
         // 开启线程实现ViewPager的跳转
