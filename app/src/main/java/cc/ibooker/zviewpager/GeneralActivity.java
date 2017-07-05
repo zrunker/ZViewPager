@@ -60,7 +60,6 @@ public class GeneralActivity extends AppCompatActivity {
                 })
                 // 开启轮播
                 .start();
-
     }
 
     @Override
@@ -69,7 +68,7 @@ public class GeneralActivity extends AppCompatActivity {
         generalVpLayout.stop();
     }
 
-    // 自定义构成
+    // 自定义你的Holder，实现更多复杂的界面，不一定是图片翻页，其他任何控件翻页亦可。
     private class ImageViewHolder implements Holder<Integer> {
         private ImageView imageView;
 
