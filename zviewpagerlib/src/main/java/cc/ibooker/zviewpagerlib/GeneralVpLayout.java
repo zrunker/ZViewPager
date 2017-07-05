@@ -39,6 +39,7 @@ public class GeneralVpLayout<T> extends FrameLayout {
     private boolean isContinue = false;// ViewPager是否跳转
     private int selectedRes;// 选中时候游标图片
     private int defalutRes;// 未选中时候游标图片
+    private boolean isIndicatorVisible = true;// 标记指示器是否可见
 
     private AtomicInteger what = new AtomicInteger(0);
     // 定义一个单线程池，最多容纳1个线程
@@ -201,7 +202,10 @@ public class GeneralVpLayout<T> extends FrameLayout {
      * @param isVisible true 可见  false 不可见 默认true
      */
     public GeneralVpLayout setPointViewVisible(boolean isVisible) {
-        indicatorLayout.setVisibility(isVisible ? VISIBLE : GONE);
+        if (indicatorLayout != null) {
+            isIndicatorVisible = isVisible;
+            indicatorLayout.setVisibility(isVisible ? VISIBLE : GONE);
+        }
         return this;
     }
 
@@ -311,7 +315,7 @@ public class GeneralVpLayout<T> extends FrameLayout {
         public void onPageSelected(int position) {
             what.getAndSet(position);
             // 修改指示器
-            if (mImageViews != null && realCount > 0) {
+            if (isIndicatorVisible && mImageViews != null && realCount > 0) {
                 int realPosition = position % realCount;
                 for (int i = 0; i < mImageViews.length; i++) {
                     mImageViews[realPosition].setBackgroundResource(selectedRes);
