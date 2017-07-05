@@ -315,8 +315,8 @@ public class ChirdHeightAutoLayout<T> extends FrameLayout {
         public void onPageSelected(int position) {
             what.getAndSet(position);
             // 修改指示器
+            int realPosition = position % realCount;
             if (isIndicatorVisible && mImageViews != null && realCount > 0) {
-                int realPosition = position % realCount;
                 for (int i = 0; i < mImageViews.length; i++) {
                     mImageViews[realPosition].setBackgroundResource(selectedRes);
                     if (realPosition != i) {
@@ -326,7 +326,7 @@ public class ChirdHeightAutoLayout<T> extends FrameLayout {
             }
             // 设置ViewPager状态改变事件监听
             if (onViewPagerChangeListener != null)
-                onViewPagerChangeListener.onPageSelected(position);
+                onViewPagerChangeListener.onPageSelected(realPosition);
         }
     }
 
