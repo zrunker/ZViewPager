@@ -60,6 +60,13 @@ public class GeneralActivity extends AppCompatActivity {
                 })
                 // 开启轮播
                 .start();
+        // ViewPager状态改变监听
+        generalVpLayout.setOnViewPagerChangeListener(new GeneralVpLayout.OnViewPagerChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+        });
     }
 
     @Override

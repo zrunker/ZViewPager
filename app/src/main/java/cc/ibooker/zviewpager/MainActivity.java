@@ -59,7 +59,13 @@ public class MainActivity extends AppCompatActivity {
 //                .setViewPagerParent(parent)
                 // 开启轮播
                 .start();
+        // ViewPager改变监听
+        decoratorLayout.setOnViewPagerChangeListener(new DecoratorLayout.OnViewPagerChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
 
+            }
+        });
     }
 
     @Override

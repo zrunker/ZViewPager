@@ -60,6 +60,13 @@ public class ChirdHeightAutoActivity extends AppCompatActivity {
                 })
                 // 开启轮播
                 .start();
+        // ViewPager状态改变监听
+        chirdMaxHeightLayout.setOnViewPagerChangeListener(new ChirdHeightAutoLayout.OnViewPagerChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+        });
     }
 
     @Override
