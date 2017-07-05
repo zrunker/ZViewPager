@@ -336,7 +336,20 @@ public class DecoratorLayout<T> extends FrameLayout {
                     }
                 }
             }
+            // 设置ViewPager状态改变事件监听
+            if (onViewPagerChangeListener != null)
+                onViewPagerChangeListener.onPageSelected(position);
         }
     }
 
+    // 定义ViewPager改变事件监听
+    public interface OnViewPagerChangeListener {
+        void onPageSelected(int position);
+    }
+
+    private OnViewPagerChangeListener onViewPagerChangeListener;
+
+    public void setOnViewPagerChangeListener(OnViewPagerChangeListener onViewPagerChangeListener) {
+        this.onViewPagerChangeListener = onViewPagerChangeListener;
+    }
 }
