@@ -59,6 +59,8 @@ public class GeneralVpAdapter<T> extends PagerAdapter {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if (ZViewPagerClickUtil.isFastClick())
+                        return;
                     if (onItemClickListener != null)
                         onItemClickListener.onItemClickListener(realPosition);
                 }
