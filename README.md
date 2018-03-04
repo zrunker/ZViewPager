@@ -1,9 +1,27 @@
 # ZViewPager
 自定义轮播（一）DecoratorLayout，轮播器的大小随子控件的大小而变化。自定义轮播（二）ChirdHeightAutoLayout，轮播器宽度不变，轮播器的高度随子控件的高度而变化。自定义轮播（三）GeneralLayout，轮播器的自动轮播。使用工具Android Studio
 
+>作者：邹峰立，微博：zrunker，邮箱：zrunker@yahoo.com，微信公众号：书客创作，个人平台：[www.ibooker.cc](http://www.ibooker.cc)。
 
-引入Android Studio：
-在build.gradle文件中添加以下代码：
+>本文选自[书客创作](http://www.ibooker.cc)平台第137篇文章。[阅读原文](http://www.ibooker.cc/article/137/detail) 。
+
+![书客创作](http://upload-images.jianshu.io/upload_images/3480018-5b74a7749da3528f..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+轮播图，几乎所有的APP都会有的一个功能，多用于广告栏。在每一个APP当中可能最终呈现的效果不同，甚至在一些APP当中轮播图做的非常炫酷。所以轮播图功能对一个APP来说还是相当重要的。本篇文章提供三种不同处理方式的轮播图，主要针对轮播图的大小显示问题作出不同的处理方式，本框架已开源。
+
+在开始讲解之前，先看一下，三种处理方式所实现的最终效果：
+
+![自定义轮播图](http://upload-images.jianshu.io/upload_images/3480018-31824c22d1f33419..gif?imageMogr2/auto-orient/strip)
+
+三种处理方式分别是：1、DecoratorLayout，轮播器的大小随子控件的大小而变化。2、ChirdHeightAutoLayout，轮播器宽度不变，轮播器的高度随子控件的高度而变化。3、GeneralLayout，设置宽和高，轮播器的自动轮播。
+
+那么该如何集成该框架呢？
+
+#### 首先引入资源
+
+这里提供两种方式集成。
+
+1、gradle引入：
 ```
 allprojects {
 	repositories {
@@ -15,15 +33,33 @@ dependencies {
 	compile 'com.github.zrunker:ZViewPager:v1.0.4'
 }
 ```
-自定义轮播（一）DecoratorLayout，轮播器的大小随子控件的大小而变化。
-在布局文件中引入DecoratorLayout。
+2、maven引入：
+```
+<repositories>
+	<repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+</repositories>
+
+<dependency>
+	<groupId>com.github.zrunker</groupId>
+	<artifactId>ZViewPager</artifactId>
+	<version>v1.0.4</version>
+</dependency>
+```
+#### 使用
+
+**一、DecoratorLayout，轮播器的大小随子控件的大小而变化。**
+
+1、在布局文件中引入DecoratorLayout。
 ```
 <cc.ibooker.zviewpagerlib.DecoratorLayout
         android:id="@+id/decoratorLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 ```
-代码使用：（案例）
+2、代码使用：（案例）
 ```
 public class MainActivity extends AppCompatActivity {
     // DecoratorLayout<T> T泛型
@@ -99,15 +135,16 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-自定义轮播（二）ChirdHeightAutoLayout，轮播器宽度不变，轮播器的高度随子控件的高度而变化。
-1、布局XML文件引入：
+**二、ChirdHeightAutoLayout，轮播器宽度不变，轮播器的高度随子控件的高度而变化。**
+
+1、在布局文件中引入ChirdHeightAutoLayout。
 ```
 <cc.ibooker.zviewpagerlib.ChirdHeightAutoLayout
         android:id="@+idirdmaxheightLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 ```
-2、Java文件操作：
+2、代码使用：（案例）
 ```
 public class ChirdHeightAutoActivity extends AppCompatActivity {
     // ChirdMaxHeightLayout<T> T泛型
@@ -184,15 +221,16 @@ public class ChirdHeightAutoActivity extends AppCompatActivity {
     }
 }
 ```
-自定义轮播（三）GeneralLayout，轮播器的自动轮播。
-1、XML布局文件引入：
+**三、GeneralLayout，设置宽和高，轮播器的自动轮播。**
+
+1、在布局文件中引入GeneralVpLayout。
 ```
 <cc.ibooker.zviewpagerlib.GeneralVpLayout
         android:id="@+id/generalVpLayout"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
 ```
-2、Java文件操作：
+2、代码使用：（案例）
 ```
 public class GeneralActivity extends AppCompatActivity {
     // GeneralVpLayout<T> T泛型
@@ -269,3 +307,9 @@ public class GeneralActivity extends AppCompatActivity {
     }
 }
 ```
+
+[Github地址](https://github.com/zrunker/ZViewPager)
+[阅读原文](http://www.ibooker.cc/article/137/detail) 
+
+----------
+![微信公众号：书客创作](http://upload-images.jianshu.io/upload_images/3480018-f36cbc05f8549cf1..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
