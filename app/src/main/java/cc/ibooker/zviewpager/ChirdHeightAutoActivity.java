@@ -28,7 +28,7 @@ public class ChirdHeightAutoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chirdheightauto);
 
-        chirdMaxHeightLayout = (ChirdHeightAutoLayout<Integer>) findViewById(R.id.chirdmaxheightLayout);
+        chirdMaxHeightLayout = findViewById(R.id.chirdmaxheightLayout);
 
         List<Integer> datas = new ArrayList<>();
         datas.add(R.drawable.b);

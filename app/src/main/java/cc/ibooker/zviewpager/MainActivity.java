@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        decoratorLayout = (DecoratorLayout<Integer>) findViewById(R.id.decoratorLayout);
+        decoratorLayout = findViewById(R.id.decoratorLayout);
 
         List<Integer> datas = new ArrayList<>();
         datas.add(R.drawable.b);
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPageIndicatorAlign(DecoratorLayout.PageIndicatorAlign.CENTER_HORIZONTAL)
                 // 设置指示器是否可见
 //                .setPointViewVisible(true)
-                // 设置是否可以手动滚蛋
+                // 设置是否可以手动滚动
 //                .setCanScroll(true)
                 // 点击事件监听
                 .setOnItemClickListener(new OnItemClickListener() {

@@ -28,7 +28,7 @@ public class GeneralActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general);
 
-        generalVpLayout = (GeneralVpLayout<Integer>) findViewById(R.id.generalVpLayout);
+        generalVpLayout = findViewById(R.id.generalVpLayout);
 
         List<Integer> datas = new ArrayList<>();
         datas.add(R.drawable.b);
