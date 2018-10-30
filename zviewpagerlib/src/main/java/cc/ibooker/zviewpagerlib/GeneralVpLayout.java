@@ -239,6 +239,11 @@ public class GeneralVpLayout<T> extends FrameLayout {
         return this;
     }
 
+    // 判断线程是否继续
+    public boolean isContinue() {
+        return isContinue && !executorService.isTerminated() && !executorService.isShutdown();
+    }
+
     /**
      * 设置ViewPager点击事件
      *
