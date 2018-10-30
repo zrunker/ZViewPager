@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -216,7 +215,28 @@ public class ChirdHeightAutoLayout<T> extends FrameLayout {
      */
     public ChirdHeightAutoLayout setScrollble(boolean scrollble) {
         if (chirdMaxHeightViewPager != null)
-            chirdMaxHeightViewPager.setScrollble(scrollble);
+            chirdMaxHeightViewPager.setCanScroll(scrollble);
+        return this;
+    }
+
+    /**
+     * 解决滑动冲突 ListView ScrollView SwipeRefreshLayout
+     *
+     * @param parent 父控件
+     */
+    public ChirdHeightAutoLayout setViewPagerParent(ViewGroup parent) {
+        if (chirdMaxHeightViewPager != null)
+            chirdMaxHeightViewPager.setViewPagerParent(parent);
+        return this;
+    }
+
+    // 销毁
+    public ChirdHeightAutoLayout destory() {
+        stop();
+        if (vPagerHandler != null) {
+            vPagerHandler.removeCallbacksAndMessages(null);
+            vPagerHandler = null;
+        }
         return this;
     }
 

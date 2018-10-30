@@ -43,18 +43,12 @@ public class DecoratorViewPager extends ViewPager {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (isCanScroll)
-            return super.dispatchTouchEvent(ev);
-        else
-            return false;
+        return isCanScroll && super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (isCanScroll)
-            return super.onInterceptTouchEvent(ev);
-        else
-            return false;
+        return isCanScroll && super.onInterceptTouchEvent(ev);
     }
 
     @Override

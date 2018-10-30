@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -215,7 +214,28 @@ public class GeneralVpLayout<T> extends FrameLayout {
      */
     public GeneralVpLayout setScrollble(boolean scrollble) {
         if (generalViewPager != null)
-            generalViewPager.setScrollble(scrollble);
+            generalViewPager.setCanScroll(scrollble);
+        return this;
+    }
+
+    /**
+     * 解决滑动冲突 ListView ScrollView SwipeRefreshLayout
+     *
+     * @param parent 父控件
+     */
+    public GeneralVpLayout setViewPagerParent(ViewGroup parent) {
+        if (generalViewPager != null)
+            generalViewPager.setViewPagerParent(parent);
+        return this;
+    }
+
+    // 销毁
+    public GeneralVpLayout destory() {
+        stop();
+        if (vPagerHandler != null) {
+            vPagerHandler.removeCallbacksAndMessages(null);
+            vPagerHandler = null;
+        }
         return this;
     }
 

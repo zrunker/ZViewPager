@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -228,6 +227,16 @@ public class DecoratorLayout<T> extends FrameLayout {
     public DecoratorLayout setViewPagerParent(ViewGroup parent) {
         if (decoratorViewPager != null)
             decoratorViewPager.setViewPagerParent(parent);
+        return this;
+    }
+
+    // 销毁
+    public DecoratorLayout destory() {
+        stop();
+        if (vPagerHandler != null) {
+            vPagerHandler.removeCallbacksAndMessages(null);
+            vPagerHandler = null;
+        }
         return this;
     }
 

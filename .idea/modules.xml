@@ -3,11 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ZViewPager.iml" filepath="$PROJECT_DIR$/ZViewPager.iml" />
-      <module fileurl="file://E:\Android_Studio\ZViewPager\ZViewPager.iml" filepath="E:\Android_Studio\ZViewPager\ZViewPager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZViewPager.iml" filepath="$PROJECT_DIR$/ZViewPager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../ZViewPager/ZViewPager.iml" filepath="$PROJECT_DIR$/../../ZViewPager/ZViewPager.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://E:\Android_Studio\ZViewPager\app\app.iml" filepath="E:\Android_Studio\ZViewPager\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../ZViewPager/app/app.iml" filepath="$PROJECT_DIR$/../../ZViewPager/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/zviewpagerlib/zviewpagerlib.iml" filepath="$PROJECT_DIR$/zviewpagerlib/zviewpagerlib.iml" />
-      <module fileurl="file://E:\Android_Studio\ZViewPager\zviewpagerlib\zviewpagerlib.iml" filepath="E:\Android_Studio\ZViewPager\zviewpagerlib\zviewpagerlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zviewpagerlib/zviewpagerlib.iml" filepath="$PROJECT_DIR$/zviewpagerlib/zviewpagerlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../ZViewPager/zviewpagerlib/zviewpagerlib.iml" filepath="$PROJECT_DIR$/../../ZViewPager/zviewpagerlib/zviewpagerlib.iml" />
     </modules>
   </component>
 </project>
