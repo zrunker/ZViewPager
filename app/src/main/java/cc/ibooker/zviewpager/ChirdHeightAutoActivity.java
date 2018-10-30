@@ -34,6 +34,7 @@ public class ChirdHeightAutoActivity extends AppCompatActivity {
         datas.add(R.drawable.b);
         datas.add(R.drawable.d);
 
+        chirdMaxHeightLayout.destory();
         // 初始化chirdMaxHeightLayout
         chirdMaxHeightLayout.init(new HolderCreator<ImageViewHolder>() {
             @Override

@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         datas.add(R.drawable.b);
         datas.add(R.drawable.d);
 
+        decoratorLayout.destory();
         // 初始化decoratorLayout
         decoratorLayout.init(new HolderCreator<ImageViewHolder>() {
             @Override

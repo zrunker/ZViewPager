@@ -34,6 +34,7 @@ public class GeneralActivity extends AppCompatActivity {
         datas.add(R.drawable.b);
         datas.add(R.drawable.d);
 
+        generalVpLayout.destory();
         // 初始化generalVpLayout
         generalVpLayout.init(new HolderCreator<ImageViewHolder>() {
             @Override

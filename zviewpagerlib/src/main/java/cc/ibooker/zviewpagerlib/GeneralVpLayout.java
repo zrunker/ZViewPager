@@ -258,8 +258,10 @@ public class GeneralVpLayout<T> extends FrameLayout {
         public void run() {
             while (isContinue) {
                 synchronized (VpThread.class) {
-                    vPagerHandler.sendEmptyMessage(what.get());
-                    whatOption();
+                    if (vPagerHandler != null) {
+                        vPagerHandler.sendEmptyMessage(what.get());
+                        whatOption();
+                    }
                 }
             }
         }
