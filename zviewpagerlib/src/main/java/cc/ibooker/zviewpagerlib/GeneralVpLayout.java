@@ -49,6 +49,10 @@ public class GeneralVpLayout<T> extends FrameLayout {
         ALIGN_PARENT_LEFT, ALIGN_PARENT_RIGHT, CENTER_HORIZONTAL
     }
 
+    public GeneralViewPager getGeneralViewPager() {
+        return generalViewPager;
+    }
+
     public GeneralVpLayout(Context context) {
         this(context, null);
     }

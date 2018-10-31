@@ -50,6 +50,10 @@ public class DecoratorLayout<T> extends FrameLayout {
         ALIGN_PARENT_LEFT, ALIGN_PARENT_RIGHT, CENTER_HORIZONTAL
     }
 
+    public DecoratorViewPager getDecoratorViewPager() {
+        return decoratorViewPager;
+    }
+
     public DecoratorLayout(Context context) {
         this(context, null);
     }

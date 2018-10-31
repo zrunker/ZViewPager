@@ -50,6 +50,10 @@ public class ChirdHeightAutoLayout<T> extends FrameLayout {
         ALIGN_PARENT_LEFT, ALIGN_PARENT_RIGHT, CENTER_HORIZONTAL
     }
 
+    public ChirdHeightAutoViewPager getChirdMaxHeightViewPager() {
+        return chirdMaxHeightViewPager;
+    }
+
     public ChirdHeightAutoLayout(Context context) {
         this(context, null);
     }
