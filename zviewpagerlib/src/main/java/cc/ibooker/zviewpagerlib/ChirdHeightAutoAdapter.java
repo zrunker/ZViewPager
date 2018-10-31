@@ -38,8 +38,8 @@ public class ChirdHeightAutoAdapter<T> extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-//        View view = (View) object;
-//        container.removeView(view);
+        View view = (View) object;
+        container.removeView(view);
     }
 
     @Override

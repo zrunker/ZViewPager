@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         datas.add(R.drawable.b);
         datas.add(R.drawable.d);
 
-        decoratorLayout.destory();
         // 初始化decoratorLayout
         decoratorLayout.init(new HolderCreator<ImageViewHolder>() {
             @Override
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        decoratorLayout.stop();
+        decoratorLayout.destory();
     }
 
     // 自定义构成

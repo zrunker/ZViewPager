@@ -34,7 +34,6 @@ public class GeneralActivity extends AppCompatActivity {
         datas.add(R.drawable.b);
         datas.add(R.drawable.d);
 
-        generalVpLayout.destory();
         // 初始化generalVpLayout
         generalVpLayout.init(new HolderCreator<ImageViewHolder>() {
             @Override
@@ -73,7 +72,7 @@ public class GeneralActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        generalVpLayout.stop();
+        generalVpLayout.destory();
     }
 
     // 自定义你的Holder，实现更多复杂的界面，不一定是图片翻页，其他任何控件翻页亦可。
