@@ -40,6 +40,7 @@ public class ChirdHeightAutoLayout<T> extends FrameLayout {
     private int selectedRes;// 选中时候游标图片
     private int defalutRes;// 未选中时候游标图片
     private boolean isIndicatorVisible = true;// 标记指示器是否可见
+    private boolean isOpenInfiniteWheel = true;// 是否开启无限轮播
 
     private AtomicInteger what = new AtomicInteger(0);
     // 定义一个单线程池，最多容纳1个线程
@@ -102,10 +103,10 @@ public class ChirdHeightAutoLayout<T> extends FrameLayout {
         this.mDatas = datas;
         // 设置Adapter
         if (chirdMaxHeightAdapter == null) {
-            chirdMaxHeightAdapter = new ChirdHeightAutoAdapter<>(holderCreator, mDatas);
+            chirdMaxHeightAdapter = new ChirdHeightAutoAdapter<>(holderCreator, mDatas, isOpenInfiniteWheel);
             chirdMaxHeightViewPager.setAdapter(chirdMaxHeightAdapter);
         } else {
-            chirdMaxHeightAdapter.reflashData(holderCreator, mDatas);
+            chirdMaxHeightAdapter.reflushData(holderCreator, mDatas, isOpenInfiniteWheel);
         }
         // 初始化数据
         totalCount = chirdMaxHeightAdapter.getCount();
@@ -132,7 +133,7 @@ public class ChirdHeightAutoLayout<T> extends FrameLayout {
             for (int k = 0; k < mDatas.size(); k++) {
                 ImageView mImageView = new ImageView(mContext);
                 LinearLayout.LayoutParams dotParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                dotParams.setMargins(0, 0, 20, 0);
+                dotParams.setMargins(10, 0, 10, 0);
                 dotParams.gravity = Gravity.CENTER_VERTICAL;
                 mImageView.setLayoutParams(dotParams);
 
@@ -208,6 +209,19 @@ public class ChirdHeightAutoLayout<T> extends FrameLayout {
         if (indicatorLayout != null) {
             isIndicatorVisible = isVisible;
             indicatorLayout.setVisibility(isVisible ? VISIBLE : GONE);
+        }
+        return this;
+    }
+
+    /**
+     * 设置是否开启无限轮播
+     *
+     * @param bool true/false 默认true
+     */
+    public ChirdHeightAutoLayout setOpenInfiniteWheel(boolean bool) {
+        if (chirdMaxHeightAdapter != null) {
+            isOpenInfiniteWheel = bool;
+            chirdMaxHeightAdapter.reflushData(isOpenInfiniteWheel);
         }
         return this;
     }

@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 })
                 // 解决与父控件listView/ScrollView..滑动冲突
 //                .setViewPagerParent(parent)
+                // 是否开启无线轮播
+                .setOpenInfiniteWheel(true)
                 // 开启轮播
                 .start();
         // ViewPager改变监听

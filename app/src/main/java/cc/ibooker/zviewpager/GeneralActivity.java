@@ -58,6 +58,8 @@ public class GeneralActivity extends AppCompatActivity {
                         Toast.makeText(GeneralActivity.this, "" + position, Toast.LENGTH_SHORT).show();
                     }
                 })
+                // 是否开启无线轮播
+                .setOpenInfiniteWheel(true)
                 // 开启轮播
                 .start();
         // ViewPager状态改变监听

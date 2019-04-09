@@ -12,19 +12,29 @@ import java.util.List;
  * Created by 邹峰立 on 2017/7/5.
  */
 public class GeneralVpAdapter<T> extends PagerAdapter {
-    private final int MULTIPLE_COUNT = 200;// 将Count扩大200倍实现无限滑动轮播
+    private int MULTIPLE_COUNT = 200;// 将Count扩大200倍实现无限滑动轮播
     private List<T> mDatas;
     private HolderCreator holderCreator;
 
-    public GeneralVpAdapter(HolderCreator holderCreator, List<T> list) {
+    public GeneralVpAdapter(HolderCreator holderCreator, List<T> list, boolean isOpenInfiniteWheel) {
         this.holderCreator = holderCreator;
         this.mDatas = list;
+        if (!isOpenInfiniteWheel)
+            MULTIPLE_COUNT = 1;
     }
 
     // 刷新数据
-    public void reflashData(HolderCreator holderCreator, List<T> list) {
+    public void reflushData(HolderCreator holderCreator, List<T> list, boolean isOpenInfiniteWheel) {
         this.holderCreator = holderCreator;
         this.mDatas = list;
+        if (!isOpenInfiniteWheel)
+            MULTIPLE_COUNT = 1;
+        this.notifyDataSetChanged();
+    }
+
+    public void reflushData(boolean isOpenInfiniteWheel) {
+        if (!isOpenInfiniteWheel)
+            MULTIPLE_COUNT = 1;
         this.notifyDataSetChanged();
     }
 
