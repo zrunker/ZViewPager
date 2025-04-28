@@ -1,8 +1,6 @@
 # ZViewPager
 自定义轮播（一）DecoratorLayout，轮播器的大小随子控件的大小而变化。自定义轮播（二）ChirdHeightAutoLayout，轮播器宽度不变，轮播器的高度随子控件的高度而变化。自定义轮播（三）GeneralLayout，轮播器的自动轮播。使用工具Android Studio
 
->作者：邹峰立，微博：zrunker，邮箱：zrunker@yahoo.com，微信公众号：书客创作，个人平台：[www.ibooker.cc](http://www.ibooker.cc)。
-
 >本文选自[书客创作](http://www.ibooker.cc)平台第137篇文章。[阅读原文](http://www.ibooker.cc/article/137/detail) 。
 
 ![书客创作](http://upload-images.jianshu.io/upload_images/3480018-5b74a7749da3528f..jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
